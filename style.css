@@ -40,17 +40,18 @@ input:focus {
   border-radius: 25px;
   overflow: hidden;
   position: relative;
+  padding: 68px;
 }
 
 .top__section {
   display: flex;
   width: 624px;
-  margin: 68px auto;
+  margin: 30px auto;
 }
 
 .top__section__heading {
   position: absolute;
-  top: 6.5vh;
+  top: 7vh;
   font-size: 40px;
   font-weight: 700;
   animation: moveup 0.8s ease 1 forwards;
@@ -140,7 +141,7 @@ main {
 }
 main ul {
   width: 643px;
-  height: 325px;
+  min-height: 325px;
   padding: 0;
   list-style-type: none;
 }
@@ -148,11 +149,30 @@ main ul {
   color: var(--dark);
   font-size: 30px;
   display: flex;
-  padding: 5px 5px;
+  padding: 5px 15px;
 }
 
 .main__list__item:nth-child(2n) {
   background-color: rgba(6, 0, 0, 0.1);
+}
+.btn-wrapper {
+  margin-left: auto;
+  display: flex;
+}
+.button-marker {
+  background: none;
+  font-size: 20px;
+  padding: 10px 10px;
+  border: none;
+  color: #55dd6b;
+  display: none;
+  cursor: pointer;
+}
+.button-marker--modified {
+  color: tomato;
+}
+.main__list__item:hover .button-marker {
+  display: inline-block;
 }
 .top__section__input {
   position: absolute;
@@ -179,28 +199,6 @@ main ul {
   opacity: 0.7;
 }
 
-.main__list__item button {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  background: none;
-  border: none;
-  font-size: 21.59px;
-  color: #55dd6b;
-  display: none;
-  transition: var(--transition);
-}
-.main__list__item:hover button {
-  display: block;
-}
-.main__list__item button span {
-  cursor: pointer;
-  padding: 3px;
-}
-.main__list__item button span:last-of-type {
-  margin-left: 30px;
-  color: #fd4e4e;
-}
 .background {
   position: absolute;
   background-color: rgba(255, 255, 255, 0.15);
@@ -225,5 +223,8 @@ main ul {
 .ballon {
   position: absolute;
   left: 3.5vw;
-  display: none;
+  top: -20vh;
+  animation: confetti 3s ease-out 1;
+  /* display: none; */
+  z-index: 10000;
 }
